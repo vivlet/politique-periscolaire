@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Périscolaire à Paris : crise, plan d'urgence et 7 réformes structurelles</title>
+<meta name="description" content="Analyse du plan d'urgence Grégoire à 20 M€ et sept propositions fondées sur la recherche scientifique pour réformer durablement le périscolaire parisien.">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #f5f0e8;
+    --accent: #c0392b;
+    --accent2: #2980b9;
+    --accent3: #1a5c3a;
+    --muted: #7a7068;
+    --rule: #d4c9b8;
+    --highlight: #fff3cd;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:'Spectral',Georgia,serif; font-size:17px; line-height:1.75; padding:3rem 1.5rem 6rem; }
+  .doc { max-width:800px; margin:0 auto; }
+
+  /* BANDEAU */
+  .actu-banner { background:var(--accent); color:#fff; padding:0.9rem 1.5rem; display:flex; align-items:center; gap:1rem; font-family:'DM Mono',monospace; font-size:0.7rem; letter-spacing:0.08em; flex-wrap:wrap; }
+  .actu-badge { background:#fff; color:var(--accent); font-weight:500; padding:0.15rem 0.5rem; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap; }
+
+  /* HEADER */
+  .doc-header { border-top:5px solid var(--ink); border-bottom:1px solid var(--rule); padding:2.5rem 0 2rem; margin-bottom:2.5rem; }
+  .doc-label { font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); margin-bottom:1.2rem; }
+  h1 { font-size:2.4rem; font-weight:300; line-height:1.15; letter-spacing:-0.025em; margin-bottom:0.7rem; }
+  h1 em { font-style:italic; color:var(--accent); }
+  .subtitle { font-size:1rem; color:var(--muted); font-weight:300; font-style:italic; max-width:640px; line-height:1.6; }
+  .meta-row { margin-top:2rem; display:flex; gap:2.2rem; flex-wrap:wrap; }
+  .meta-item { font-family:'DM Mono',monospace; font-size:0.65rem; color:var(--muted); letter-spacing:0.04em; }
+  .meta-item strong { display:block; color:var(--ink); font-weight:500; margin-bottom:0.1rem; }
+
+  /* SHARE */
+  .share-bar { background:var(--ink); color:var(--paper); padding:0.8rem 1.5rem; display:flex; align-items:center; gap:1rem; margin-bottom:2.5rem; font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.07em; flex-wrap:wrap; }
+  .share-bar span { opacity:0.6; flex:1; min-width:160px; }
+  .share-btn { background:transparent; border:1px solid rgba(255,255,255,0.3); color:var(--paper); font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.4rem 0.9rem; cursor:pointer; transition:all 0.2s; }
+  .share-btn:hover { background:var(--accent); border-color:var(--accent); }
+
+  /* EXEC SUMMARY */
+  .exec-summary { background:var(--ink); color:var(--paper); padding:2rem 2.5rem; margin-bottom:3rem; border-left:5px solid var(--accent); }
+  .exec-summary .label { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; font-weight:500; }
+  .exec-summary p { font-size:0.95rem; line-height:1.85; opacity:0.92; margin-bottom:0.8rem; }
+  .exec-summary p:last-child { margin-bottom:0; }
+
+  /* SECTIONS */
+  h2.section-title { font-size:0.68rem; font-family:'DM Mono',monospace; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent); font-weight:500; margin-top:3.5rem; margin-bottom:1.4rem; padding-bottom:0.5rem; border-bottom:1px solid var(--rule); }
+  h3.subsection { font-size:1.2rem; font-weight:600; margin-top:2rem; margin-bottom:0.6rem; letter-spacing:-0.01em; }
+  p { margin-bottom:1rem; }
+
+  /* CRISIS BOX */
+  .crisis-box { background:#fdf0f0; border:1px solid var(--accent); border-left:5px solid var(--accent); padding:1.5rem 2rem; margin:2rem 0; }
+  .crisis-box .crisis-label { font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:0.8rem; font-weight:500; }
+  .crisis-box p { font-size:0.92rem; margin-bottom:0.5rem; line-height:1.65; }
+  .crisis-box p:last-child { margin-bottom:0; }
+
+  /* DATA GRID */
+  .data-row { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); margin:2rem 0; }
+  .data-cell { background:var(--paper); padding:1.4rem 1rem; text-align:center; }
+  .data-cell .number { font-size:1.9rem; font-weight:300; letter-spacing:-0.03em; color:var(--accent); display:block; line-height:1; margin-bottom:0.4rem; }
+  .data-cell .label { font-family:'DM Mono',monospace; font-size:0.6rem; color:var(--muted); letter-spacing:0.07em; text-transform:uppercase; line-height:1.45; }
+
+  /* PULL QUOTE */
+  .pullquote { border-left:4px solid var(--accent); margin:2rem 0; padding:0.5rem 0 0.5rem 1.8rem; font-size:1.1rem; font-style:italic; font-weight:300; line-height:1.6; }
+  .pullquote .attr { display:block; margin-top:0.5rem; font-size:0.72rem; font-style:normal; font-family:'DM Mono',monospace; color:var(--muted); }
+
+  /* PLAN BOX */
+  .plan-box { border:2px solid var(--ink); margin:2rem 0; overflow:hidden; }
+  .plan-box-header { background:var(--ink); color:var(--paper); padding:1rem 1.5rem; display:flex; align-items:baseline; gap:1.2rem; flex-wrap:wrap; }
+  .plan-box-header .plan-title { font-size:1rem; font-weight:400; }
+  .plan-box-header .plan-amount { font-family:'DM Mono',monospace; font-size:0.72rem; color:#ffd700; }
+  .plan-measures { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); }
+  .plan-measure { background:var(--paper); padding:1.1rem 1.3rem; }
+  .plan-measure .pm-label { font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:0.35rem; }
+  .pm-label.urgent { color:var(--accent); }
+  .pm-label.structure { color:var(--accent2); }
+  .pm-label.citizen { color:var(--accent3); }
+  .plan-measure p { font-size:0.88rem; margin-bottom:0; line-height:1.55; }
+
+  /* ANALYSIS BOX */
+  .analysis-box { background:var(--highlight); border-left:3px solid #d4a017; padding:1.2rem 1.5rem; margin:1.5rem 0; }
+  .analysis-box .an-label { font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:#7a5c00; margin-bottom:0.6rem; font-weight:500; }
+  .analysis-box p { font-size:0.9rem; color:#4a3800; margin-bottom:0.5rem; line-height:1.6; }
+  .analysis-box p:last-child { margin-bottom:0; }
+
+  /* GAP TABLE */
+  .gap-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.86rem; }
+  .gap-table th { font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); border-bottom:2px solid var(--ink); padding:0.6rem 0.8rem; text-align:left; font-weight:500; }
+  .gap-table td { padding:0.75rem 0.8rem; border-bottom:1px solid var(--rule); vertical-align:top; line-height:1.5; }
+  .gap-table tr:last-child td { border-bottom:none; }
+  .covered { color:var(--accent3); font-weight:600; }
+  .partial  { color:#c47d00; font-weight:600; }
+  .missing  { color:var(--accent); font-weight:600; }
+
+  /* SOURCE NOTE */
+  .source-note { background:var(--highlight); border-left:3px solid #d4a017; padding:0.85rem 1.2rem; margin:1rem 0; font-size:0.83rem; color:#5a4500; line-height:1.55; }
+  .source-note strong { font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; }
+
+  /* SMART BLOCKS */
+  .smart-block { border:1px solid var(--rule); margin:1.8rem 0; overflow:hidden; }
+  .smart-header { display:flex; align-items:stretch; }
+  .smart-number { background:var(--ink); color:var(--paper); font-family:'DM Mono',monospace; font-size:1.5rem; font-weight:400; width:3.5rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; letter-spacing:-0.05em; }
+  .smart-number.r6 { background:var(--accent2); }
+  .smart-number.r7 { background:var(--accent3); }
+  .smart-title-block { padding:1rem 1.5rem; flex:1; border-bottom:1px solid var(--rule); }
+  .smart-label { font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:0.25rem; }
+  .smart-label.blue { color:var(--accent2); }
+  .smart-label.green { color:var(--accent3); }
+  .smart-title { font-size:1.05rem; font-weight:600; line-height:1.35; }
+  .smart-body { padding:1.3rem 1.5rem 1.3rem calc(3.5rem + 1.5rem); font-size:0.94rem; }
+  .smart-body p { margin-bottom:0.6rem; }
+
+  /* BADGES ALIGNEMENT */
+  .align-badge { display:inline-block; font-family:'DM Mono',monospace; font-size:0.57rem; letter-spacing:0.08em; padding:0.12rem 0.45rem; border-radius:2px; text-transform:uppercase; margin-left:0.4rem; vertical-align:middle; white-space:nowrap; }
+  .badge-covered { background:#e8f5ec; color:var(--accent3); border:1px solid #a8d5b5; }
+  .badge-partial  { background:#fff3e0; color:#b06000; border:1px solid #f0c060; }
+  .badge-missing  { background:#fde8e8; color:var(--accent); border:1px solid #f0a0a0; }
+
+  /* SMART CRITERIA */
+  .smart-criteria { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--rule); border-top:1px solid var(--rule); }
+  .criterion { background:var(--paper); padding:0.75rem 0.5rem; text-align:center; }
+  .criterion-letter { font-family:'DM Mono',monospace; font-size:0.72rem; font-weight:500; color:var(--accent2); display:block; margin-bottom:0.2rem; }
+  .criterion-text { font-size:0.63rem; color:var(--muted); line-height:1.35; }
+
+  /* RESEARCH GRID */
+  .research-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); border:1px solid var(--rule); margin:1.5rem 0; }
+  .research-cell { background:var(--paper); padding:1.2rem; }
+  .research-cell .rc-label { font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent2); margin-bottom:0.4rem; }
+  .research-cell p { font-size:0.87rem; margin-bottom:0; line-height:1.55; }
+
+  /* ROADMAP TABLE */
+  table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.85rem; }
+  th { font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); border-bottom:2px solid var(--ink); padding:0.6rem 0.7rem; text-align:left; font-weight:500; }
+  td { padding:0.65rem 0.7rem; border-bottom:1px solid var(--rule); vertical-align:top; line-height:1.5; }
+  tr:last-child td { border-bottom:none; }
+  .pill { display:inline-block; font-family:'DM Mono',monospace; font-size:0.57rem; letter-spacing:0.08em; padding:0.12rem 0.45rem; border-radius:2px; text-transform:uppercase; white-space:nowrap; }
+  .pill-red    { background:#fde8e8; color:var(--accent); }
+  .pill-blue   { background:#e8f0fe; color:var(--accent2); }
+  .pill-green  { background:#e8f5ec; color:var(--accent3); }
+  .pill-orange { background:#fff3e0; color:#b06000; }
+
+  /* FOOTER */
+  .doc-footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--rule); font-family:'DM Mono',monospace; font-size:0.6rem; color:var(--muted); letter-spacing:0.04em; display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; }
+
+  @media (max-width:620px) {
+    .data-row { grid-template-columns:1fr 1fr; }
+    .research-grid { grid-template-columns:1fr; }
+    .plan-measures { grid-template-columns:1fr; }
+    .smart-body { padding-left:1.2rem; }
+    h1 { font-size:1.85rem; }
+    .meta-row { gap:1.1rem; }
+    .share-bar { flex-direction:column; gap:0.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <!-- BANDEAU ACTU -->
+  <div class="actu-banner">
+    <span class="actu-badge">Actualité · 17 mai 2026</span>
+    <span>La procureure de Paris annonce des enquêtes dans plus de 110 établissements — grève des animateurs jusqu'au 22 mai — convention citoyenne lancée aujourd'hui par Grégoire.</span>
+  </div>
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <p class="doc-label">Note de politique publique · Ville de Paris · Éducation &amp; Périscolaire</p>
+    <h1>Périscolaire à Paris :<br><em>crise systémique</em>, plan d'urgence<br>et 7 réformes structurelles</h1>
+    <p class="subtitle">Analyse du plan d'action Grégoire à 20 M€ adopté en avril 2026, ses lacunes, et sept propositions fondées sur la recherche scientifique internationale pour une réforme durable du périscolaire parisien.</p>
+    <div class="meta-row">
+      <div class="meta-item"><strong>Date</strong>17 mai 2026</div>
+      <div class="meta-item"><strong>Direction concernée</strong>DASCO · Mairie de Paris · Conseil de Paris</div>
+      <div class="meta-item"><strong>Fondement scientifique</strong>Recherche internationale (Scopus, 17 études)</div>
+      <div class="meta-item"><strong>Données</strong>Open Data Paris · Bilan Social DASCO 2023 · Cour des comptes · Presse 2026</div>
+    </div>
+  </div>
+
+  <!-- SHARE BAR -->
+  <div class="share-bar">
+    <span>Diffusez librement — reproduction autorisée avec mention de la source</span>
+    <button class="share-btn" onclick="window.print()">⬇ Imprimer / PDF</button>
+    <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href).then(()=>this.textContent='✓ Copié !')">Copier le lien</button>
+  </div>
+
+  <!-- SYNTHÈSE EXÉCUTIVE -->
+  <div class="exec-summary">
+    <p class="label">Synthèse exécutive</p>
+    <p>Le périscolaire parisien est en crise ouverte. Depuis le début de 2026, <strong>78 agents ont été suspendus</strong> dans les écoles maternelles et élémentaires, dont 31 pour suspicion de violences sexuelles sur mineurs. Le parquet enquête sur plus de <strong>110 établissements</strong>. Le phénomène est qualifié de « systémique » par le maire Emmanuel Grégoire lui-même.</p>
+    <p>En réponse, le Conseil de Paris a adopté en avril 2026 un plan d'urgence à <strong>20 millions d'euros</strong> : cellule d'écoute, chaîne de signalement simplifiée, formation généralisée aux 14 000 animateurs, ouverture d'une « école du périscolaire » en septembre 2026, et convention citoyenne lancée ce 17 mai. C'est un premier pas nécessaire — mais il laisse sans réponse les causes structurelles profondes.</p>
+    <p>Ce document analyse le plan Grégoire, identifie ses lacunes et formule <strong>sept propositions fondées sur la recherche scientifique</strong>, chiffrées et échelonnées de 2026 à 2028.</p>
+  </div>
+
+  <!-- SECTION 1 : LA CRISE -->
+  <h2 class="section-title">01 — La crise en chiffres</h2>
+
+  <div class="crisis-box">
+    <p class="crisis-label">⚠ Situation au 17 mai 2026 — données judiciaires et municipales</p>
+    <p><strong>78 agents suspendus</strong> depuis le 1er janvier 2026 dans les écoles parisiennes, dont <strong>31 pour suspicion de violences sexuelles sur mineurs</strong>. Tous les arrondissements sont concernés.</p>
+    <p><strong>Plus de 110 établissements</strong> sous enquête judiciaire : 84 écoles maternelles, une vingtaine d'élémentaires, une dizaine de crèches. Trois informations judiciaires ouvertes, cinq convocations devant le tribunal.</p>
+    <p><strong>Premier procès le 5 mai :</strong> un animateur de 47 ans encourt 18 mois avec sursis pour harcèlement et agressions sexuelles sur neuf fillettes. Un animateur d'une vingtaine d'années, mis en examen pour des « gestes de nature sexuelle » sur trois enfants, a été placé en détention provisoire fin avril.</p>
+    <p><strong>Grève jusqu'au 22 mai</strong> : les 7 syndicats dénoncent une « politique de répression » et des « suspensions automatiques » qui aggravent le sous-effectif chronique.</p>
+  </div>
+
+  <div class="data-row">
+    <div class="data-cell">
+      <span class="number">14 000</span>
+      <span class="label">animateurs parisiens,<br>quasi tous vacataires</span>
+    </div>
+    <div class="data-cell">
+      <span class="number">78</span>
+      <span class="label">agents suspendus<br>depuis jan. 2026</span>
+    </div>
+    <div class="data-cell">
+      <span class="number">110+</span>
+      <span class="label">établissements sous<br>enquête judiciaire</span>
+    </div>
+  </div>
+
+  <div class="data-row">
+    <div class="data-cell">
+      <span class="number">20 M€</span>
+      <span class="label">plan d'action Grégoire<br>adopté avril 2026</span>
+    </div>
+    <div class="data-cell">
+      <span class="number">5 434 €</span>
+      <span class="label">coût net/élève/an<br>+23 % en 4 ans</span>
+    </div>
+    <div class="data-cell">
+      <span class="number">50 M€</span>
+      <span class="label">subventions versées<br>chaque année au privé</span>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    « Un risque systémique et peut-être même une omerta systémique. »
+    <span class="attr">— Emmanuel Grégoire, maire de Paris, Le Monde, 3 avril 2026</span>
+  </div>
+
+  <h3 class="subsection">Les quatre causes structurelles sous-jacentes</h3>
+
+  <p><strong>1. Un personnel massivement précarisé.</strong> Les 14 000 animateurs sont en quasi-totalité vacataires : rémunérés à l'heure, sans continuité de parcours, sans formation initiale suffisante, sans mécanisme de suivi longitudinal. Cette instabilité crée des angles morts dans les procédures de contrôle et de signalement.</p>
+
+  <p><strong>2. Une chaîne de signalement défaillante.</strong> Les victimes, leurs familles et les collègues ne savaient pas à qui s'adresser. L'absence de cellule d'écoute dédiée et la complexité des procédures internes ont favorisé le silence pendant des années.</p>
+
+  <p><strong>3. Une gouvernance fragmentée sans pilotage unifié.</strong> La DASCO, les 20 Caisses des écoles, les associations et les prestataires de marché opèrent sans indicateurs communs, sans protocoles de sécurité harmonisés, et sans remontée systématique vers une autorité centrale.</p>
+
+  <p><strong>4. Un financement insuffisant et non traçable.</strong> La dépense périscolaire réelle n'est pas isolée dans le Compte Administratif de la Ville, rendant impossible tout suivi de l'impact budgétaire et toute redevabilité publique.</p>
+
+
+  <!-- SECTION 2 : PLAN GRÉGOIRE -->
+  <h2 class="section-title">02 — Le plan d'urgence Grégoire : analyse critique</h2>
+
+  <div class="plan-box">
+    <div class="plan-box-header">
+      <span class="plan-title">Plan d'action périscolaire — adopté par le Conseil de Paris extraordinaire, 14 avril 2026</span>
+      <span class="plan-amount">Budget voté : 20 millions d'euros</span>
+    </div>
+    <div class="plan-measures">
+      <div class="plan-measure">
+        <p class="pm-label urgent">Urgence · Signalement</p>
+        <p>Cellule d'écoute dédiée accessible aux familles. Chaîne de signalement simplifiée et identifiée. Suspension automatique « au moindre soupçon ». Communication trimestrielle publique des statistiques de suspensions.</p>
+      </div>
+      <div class="plan-measure">
+        <p class="pm-label urgent">Urgence · Transparence</p>
+        <p>Remise systématique aux familles des résultats des enquêtes administratives. Suppression du poste de « défenseur des enfants » créé en décembre 2025, jugé insuffisant. « Transparence totale » promise par l'édile.</p>
+      </div>
+      <div class="plan-measure">
+        <p class="pm-label structure">Structure · Formation</p>
+        <p>Formation à la prévention des violences envers les mineurs généralisée aux 14 000 animateurs dans les deux mois. Ouverture en <strong>septembre 2026</strong> d'une « École parisienne du périscolaire » avec 2 jours de formation initiale obligatoire.</p>
+      </div>
+      <div class="plan-measure">
+        <p class="pm-label structure">Structure · Professionnalisation</p>
+        <p>Engagement à « investir massivement » dans la professionnalisation d'une filière très précarisée. Sans objectif chiffré de déprécarisation à ce stade — point faible majeur du plan.</p>
+      </div>
+      <div class="plan-measure">
+        <p class="pm-label citizen">Délibération · Convention citoyenne</p>
+        <p>Convention citoyenne sur « les temps de l'enfant » lancée le <strong>17 mai 2026</strong>. Conclusions attendues le 22 juin. Aucun tabou exclu, y compris un retour à la semaine de 4 jours. Ligne rouge : « pas au détriment de la sécurité ».</p>
+      </div>
+      <div class="plan-measure">
+        <p class="pm-label citizen">Délibération · Collectifs</p>
+        <p>Intégration partielle des propositions des collectifs SOS Périscolaire et #MeTooEcole. Ces derniers saluent « un début » mais réclament des mesures nationales et une approche interministérielle.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="analysis-box">
+    <p class="an-label">⚖ Analyse — Ce que le plan couvre, ce qu'il ne couvre pas</p>
+    <p><strong>Points forts :</strong> la célérité de la réponse (Conseil extraordinaire mi-avril), la création de la cellule d'écoute, l'ouverture de l'École du périscolaire en septembre, et la transparence trimestrielle sur les suspensions répondent à des lacunes criantes et documentées depuis des années.</p>
+    <p><strong>Lacunes majeures :</strong> le plan ne fixe aucun objectif chiffré de déprécarisation, ne crée pas de budget traçable, ne publie pas d'audit des taux d'encadrement école par école, ne crée pas de comité de pilotage unifié, et ne réforme pas la logique budgétaire incrémentale.</p>
+    <p><strong>Paradoxe structurel non résolu :</strong> les suspensions automatiques créent un sous-effectif aggravant qui désorganise les écoles — sans recrutement net compensatoire prévu en parallèle. C'est précisément ce que dénoncent les 7 syndicats en grève jusqu'au 22 mai.</p>
+  </div>
+
+  <table class="gap-table">
+    <thead>
+      <tr>
+        <th>Dimension</th>
+        <th>Plan Grégoire 2026</th>
+        <th>Couverture</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Signalement et protection immédiate</td>
+        <td>Cellule d'écoute, suspensions, transparence trimestrielle</td>
+        <td class="covered">✓ Couverte</td>
+      </tr>
+      <tr>
+        <td>Formation initiale à la sécurité</td>
+        <td>École du périscolaire (sept. 2026), formation 14 000 animateurs</td>
+        <td class="covered">✓ Couverte</td>
+      </tr>
+      <tr>
+        <td>Professionnalisation de la filière</td>
+        <td>Engagement général sans objectif chiffré de déprécarisation</td>
+        <td class="partial">⚠ Partielle</td>
+      </tr>
+      <tr>
+        <td>Transparence budgétaire (Open Data)</td>
+        <td>Non mentionnée dans le plan</td>
+        <td class="missing">✗ Absente</td>
+      </tr>
+      <tr>
+        <td>Déprécarisation (objectif chiffré)</td>
+        <td>Non chiffrée</td>
+        <td class="missing">✗ Absente</td>
+      </tr>
+      <tr>
+        <td>Taux d'encadrement (audit école par école)</td>
+        <td>Non mentionné</td>
+        <td class="missing">✗ Absente</td>
+      </tr>
+      <tr>
+        <td>Gouvernance unifiée (comité de pilotage)</td>
+        <td>Convention citoyenne (conclusions 22 juin) — résultat ouvert</td>
+        <td class="partial">⚠ En cours</td>
+      </tr>
+      <tr>
+        <td>Budget par performance (cycle biennal)</td>
+        <td>Non mentionné</td>
+        <td class="missing">✗ Absente</td>
+      </tr>
+      <tr>
+        <td>Optimisation territoriale des effectifs</td>
+        <td>Non mentionnée</td>
+        <td class="missing">✗ Absente</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="source-note">
+    <strong>Sources :</strong> Le Monde 3 avril 2026 · CNews 14 avril 2026 · Public Sénat 3 avril 2026 · France 24 17 mai 2026 · RTL 17 mai 2026 (procureure Laure Beccuau) · Actu Évreux 3 avril 2026 · ICI Radio-Canada 17 mai 2026.
+  </div>
+
+
+  <!-- SECTION 3 : RECOMMANDATIONS -->
+  <h2 class="section-title">03 — Sept propositions issues de la recherche scientifique</h2>
+
+  <!-- R1 -->
+  <div class="smart-block">
+    <div class="smart-header">
+      <div class="smart-number">R1</div>
+      <div class="smart-title-block">
+        <p class="smart-label">Financement · Transparence budgétaire</p>
+        <p class="smart-title">Créer une ligne budgétaire dédiée et traçable pour le périscolaire dans le Compte Administratif de Paris <span class="align-badge badge-missing">Non couvert</span></p>
+      </div>
+    </div>
+    <div class="smart-body">
+      <p>Isoler dans le Compte Administratif (fichier M57, filtre <code>type_operation = "Réel"</code>) une sous-fonction périscolaire distincte des autres postes DASCO. Sans cette traçabilité, il est impossible de mesurer l'impact réel des 20 M€ du plan Grégoire ni de vérifier que les engagements budgétaires sont tenus.</p>
+      <p><strong>Objectif chiffré :</strong> publication d'un tableau de bord annuel sur opendata.paris.fr avec 5 indicateurs minimum (dépense/élève, taux d'encadrement réel, part vacataires, coût TAP, écart BP/CA) avant fin 2026.</p>
+      <p><strong>Responsable :</strong> Direction des Finances + DASCO.</p>
+    </div>
+    <div class="smart-criteria">
+      <div class="criterion"><span class="criterion-letter">S</span><span class="criterion-text">Sous-fonction M57 isolée, 5 indicateurs définis</span></div>
+      <div class="criterion"><span class="criterion-letter">M</span><span class="criterion-text">Publication Open Data vérifiable par tiers</span></div>
+      <div class="criterion"><span class="criterion-letter">A</span><span class="criterion-text">Standard M57 en vigueur à Paris depuis 2019</span></div>
+      <div class="criterion"><span class="criterion-letter">R</span><span class="criterion-text">Condition de tout pilotage fondé sur les faits</span></div>
+      <div class="criterion"><span class="criterion-letter">T</span><span class="criterion-text">Fin 2026 (CA exercice 2025)</span></div>
+    </div>
+  </div>
+
+  <!-- R2 -->
+  <div class="smart-block">
+    <div class="smart-header">
+      <div class="smart-number">R2</div>
+      <div class="smart-title-block">
+        <p class="smart-label">Personnel · Déprécarisation</p>
+        <p class="smart-title">Réduire le nombre de vacataires de 14 000 à 8 000 d'ici 2028 par titularisation et contractualisation progressive <span class="align-badge badge-partial">Partiellement couvert</span></p>
+      </div>
+    </div>
+    <div class="smart-body">
+      <p>Le plan Grégoire évoque la professionnalisation sans la chiffrer. Or c'est précisément la précarité qui empêche tout vrai contrôle : un vacataire interchangeable ne peut être ni suivi dans la durée, ni accompagné pédagogiquement, ni responsabilisé. Lancer un plan triennal ciblant les animateurs avec plus de 2 ans d'ancienneté effective, via titularisation (catégorie C) ou CDI de droit public (≥ 65 % du temps plein).</p>
+      <p><strong>Objectif chiffré :</strong> 2 000 déprécarisations/an sur 3 ans (2026–2028), soit 6 000 agents stabilisés — réduction de 43 % du contingent vacataire. Coût net additionnel quasi-nul (heures déjà rémunérées), avec gain en fidélisation et réduction des recrutements d'urgence.</p>
+      <p><strong>Responsable :</strong> DASCO / DRH Ville de Paris.</p>
+    </div>
+    <div class="smart-criteria">
+      <div class="criterion"><span class="criterion-letter">S</span><span class="criterion-text">14 000 → 8 000 vacataires, critères définis</span></div>
+      <div class="criterion"><span class="criterion-letter">M</span><span class="criterion-text">2 000 actes/an, suivi au Bilan Social DASCO</span></div>
+      <div class="criterion"><span class="criterion-letter">A</span><span class="criterion-text">Mécanismes juridiques existants (concours, CDI)</span></div>
+      <div class="criterion"><span class="criterion-letter">R</span><span class="criterion-text">Stabilise les équipes, permet suivi longitudinal</span></div>
+      <div class="criterion"><span class="criterion-letter">T</span><span class="criterion-text">Plan 2026–2028, revue annuelle au Conseil</span></div>
+    </div>
+  </div>
+
+  <!-- R3 -->
+  <div class="smart-block">
+    <div class="smart-header">
+      <div class="smart-number">R3</div>
+      <div class="smart-title-block">
+        <p class="smart-label">Formation · Certification universelle</p>
+        <p class="smart-title">Atteindre 100 % d'animateurs certifiés BAFA ou équivalent d'ici septembre 2027, en articulant l'École du périscolaire à un parcours qualifiant <span class="align-badge badge-partial">Partiellement couvert</span></p>
+      </div>
+    </div>
+    <div class="smart-body">
+      <p>L'École du périscolaire (septembre 2026) est une bonne mesure, mais 2 jours de formation initiale ne constituent pas une qualification. La conditionner à terme à l'obtention du BAFA (ou Bac Pro Animation) pour tout renouvellement de vacation au-delà de la première saison, en mobilisant les partenariats avec les lycées professionnels.</p>
+      <p><strong>Objectif chiffré :</strong> 100 % de certification pour titulaires et contractuels ; 60 % pour les vacataires fin 2026 ; 80 % fin 2027. Indicateur publié au Bilan Social DASCO et au Conseil de Paris.</p>
+      <p><strong>Responsable :</strong> DASCO — École du périscolaire / CASPE.</p>
+    </div>
+    <div class="smart-criteria">
+      <div class="criterion"><span class="criterion-letter">S</span><span class="criterion-text">Taux de certification par statut et par CASPE</span></div>
+      <div class="criterion"><span class="criterion-letter">M</span><span class="criterion-text">% certifiés au Bilan Social annuel</span></div>
+      <div class="criterion"><span class="criterion-letter">A</span><span class="criterion-text">École du périscolaire ouverte sept. 2026</span></div>
+      <div class="criterion"><span class="criterion-letter">R</span><span class="criterion-text">Réduit risques, améliore qualité éducative</span></div>
+      <div class="criterion"><span class="criterion-letter">T</span><span class="criterion-text">60 % fin 2026 → 80 % fin 2027 → 100 % permanents</span></div>
+    </div>
+  </div>
+
+  <!-- R4 -->
+  <div class="smart-block">
+    <div class="smart-header">
+      <div class="smart-number">R4</div>
+      <div class="smart-title-block">
+        <p class="smart-label">Encadrement · Taux réglementaire</p>
+        <p class="smart-title">Publier un audit école par école et atteindre la norme 1:8 / 1:12 dans 100 % des écoles d'ici la rentrée 2027 <span class="align-badge badge-missing">Non couvert</span></p>
+      </div>
+    </div>
+    <div class="smart-body">
+      <p>Les suspensions automatiques du plan Grégoire aggravent le sous-effectif sans que des recrutements nets compensatoires soient prévus. L'atteinte des taux réglementaires nationaux (1:8 pour les moins de 6 ans ; 1:12 au-delà) devient une urgence de sécurité, pas seulement de qualité. Sans audit public, il est impossible de savoir quels arrondissements sont les plus exposés.</p>
+      <p><strong>Objectif chiffré :</strong> audit public école par école avant décembre 2026 ; 75 % des écoles conformes fin 2026 ; 100 % à la rentrée 2027. Budget additionnel estimé : 15–20 M€/an, finançable par redéploiement partiel des 50 M€ versés annuellement au secteur privé.</p>
+      <p><strong>Responsable :</strong> DASCO / Conseil de Paris / Adjointe aux RH.</p>
+    </div>
+    <div class="smart-criteria">
+      <div class="criterion"><span class="criterion-letter">S</span><span class="criterion-text">Taux 1:8 / 1:12 par école, publié école par école</span></div>
+      <div class="criterion"><span class="criterion-letter">M</span><span class="criterion-text">% d'écoles conformes, audit DASCO annuel</span></div>
+      <div class="criterion"><span class="criterion-letter">A</span><span class="criterion-text">Obligation légale nationale existante</span></div>
+      <div class="criterion"><span class="criterion-letter">R</span><span class="criterion-text">Répond au paradoxe suspensions / sous-effectif</span></div>
+      <div class="criterion"><span class="criterion-letter">T</span><span class="criterion-text">Audit déc. 2026 → 75 % → 100 % rentrée 2027</span></div>
+    </div>
+  </div>
+
+  <!-- R5 -->
+  <div class="smart-block">
+    <div class="smart-header">
+      <div class="smart-number">R5</div>
+      <div class="smart-title-block">
+        <p class="smart-label">Gouvernance · Pilotage unifié</p>
+        <p class="smart-title">Créer un comité de pilotage périscolaire unique (DASCO + Caisses des écoles + CAF + Rectorat) avec 8 indicateurs communs d'ici janvier 2027 <span class="align-badge badge-partial">En cours — convention citoyenne</span></p>
+      </div>
+    </div>
+    <div class="smart-body">
+      <p>La convention citoyenne lancée le 17 mai pourrait déboucher sur cette gouvernance unifiée — mais ses conclusions (22 juin) ne seront opérationnelles qu'avec un an de délai. Il faut anticiper en mandatant dès maintenant un comité de pilotage adossé au PEDT 2021–2026 (déjà cosigné Ville / Éducation nationale / Préfecture / CAF) pour standardiser les protocoles de sécurité, les conditions d'emploi et les indicateurs de qualité entre tous les acteurs du périscolaire.</p>
+      <p><strong>Objectif chiffré :</strong> comité opérationnel avant janvier 2027 ; 8 indicateurs harmonisés publiés avant juin 2027 ; rapport annuel au Conseil de Paris.</p>
+      <p><strong>Responsable :</strong> Adjointe à l'Éducation / Maire de Paris.</p>
+    </div>
+    <div class="smart-criteria">
+      <div class="criterion"><span class="criterion-letter">S</span><span class="criterion-text">Comité unique, 8 indicateurs communs, rapport annuel</span></div>
+      <div class="criterion"><span class="criterion-letter">M</span><span class="criterion-text">Tableau de bord public soumis au Conseil</span></div>
+      <div class="criterion"><span class="criterion-letter">A</span><span class="criterion-text">PEDT 2021–2026 cadre déjà cosigné</span></div>
+      <div class="criterion"><span class="criterion-letter">R</span><span class="criterion-text">Ferme les angles morts entre acteurs fragmentés</span></div>
+      <div class="criterion"><span class="criterion-letter">T</span><span class="criterion-text">Comité : jan. 2027 · Tableau de bord : juin 2027</span></div>
+    </div>
+  </div>
+
+  <!-- R6 -->
+  <div class="smart-block">
+    <div class="smart-header">
+      <div class="smart-number r6">R6</div>
+      <div class="smart-title-block">
+        <p class="smart-label blue">Budget · Passage au budget par performance</p>
+        <p class="smart-title">Remplacer le budget périscolaire incrémental par un cycle biennal d'évaluation coût-bénéfice par type d'atelier, à partir de 2027 <span class="align-badge badge-missing">Non couvert</span></p>
+      </div>
+    </div>
+    <div class="smart-body">
+      <p>Le budget DASCO est incrémental : chaque ligne augmente par rapport à l'année précédente sans révision de l'impact réel. Le coût net par élève a bondi de 23 % en quatre ans sans bilan d'efficacité publié. La recherche internationale démontre que le « productivity budgeting » — évaluation de chaque programme à l'aune de résultats mesurés — permet de réallouer les ressources vers les activités à plus fort impact et de détecter les dysfonctionnements plus tôt.</p>
+      <p><strong>Objectif chiffré :</strong> grille d'évaluation biennale (participation, satisfaction familles, indicateurs de bien-être, coût/heure/élève) pour les 12 757 types d'ateliers TAP ; première publication avant juin 2027 ; réallocation des ateliers dont le ratio coût/impact est défavorable.</p>
+      <p><strong>Responsable :</strong> DASCO / Mission Évaluation des politiques publiques de la Ville.</p>
+    </div>
+    <div class="smart-criteria">
+      <div class="criterion"><span class="criterion-letter">S</span><span class="criterion-text">Grille définie pour chaque type d'atelier TAP</span></div>
+      <div class="criterion"><span class="criterion-letter">M</span><span class="criterion-text">Coût/heure/élève + 3 indicateurs d'impact publiés</span></div>
+      <div class="criterion"><span class="criterion-letter">A</span><span class="criterion-text">Données de participation déjà collectées par DASCO</span></div>
+      <div class="criterion"><span class="criterion-letter">R</span><span class="criterion-text">Stoppe la hausse des coûts sans gain éducatif prouvé</span></div>
+      <div class="criterion"><span class="criterion-letter">T</span><span class="criterion-text">Grille : déc. 2026 · Publication : juin 2027 · Cycle : 2 ans</span></div>
+    </div>
+  </div>
+
+  <!-- R7 -->
+  <div class="smart-block">
+    <div class="smart-header">
+      <div class="smart-number r7">R7</div>
+      <div class="smart-title-block">
+        <p class="smart-label green">Territoire · Allocation optimisée des ressources</p>
+        <p class="smart-title">Déployer un outil d'allocation des animateurs fondé sur la demande réelle par arrondissement, d'ici la rentrée 2027 <span class="align-badge badge-missing">Non couvert</span></p>
+      </div>
+    </div>
+    <div class="smart-body">
+      <p>Les suspensions automatiques créent des déserts d'encadrement dans certains arrondissements sans que les ressources disponibles soient redistribuées en temps réel. Des modèles d'optimisation multi-objectifs (déjà utilisés dans des villes européennes pour la planification extrascolaire) permettent de minimiser les besoins non satisfaits tout en respectant des critères d'équité territoriale et de coût.</p>
+      <p><strong>Objectif chiffré :</strong> outil de simulation open source déployé dans les 10 CASPE avant la rentrée 2027. Réduction cible des déséquilibres : -30 % d'écart entre le taux d'encadrement effectif le plus haut et le plus bas entre arrondissements.</p>
+      <p><strong>Responsable :</strong> DASCO / Direction des Systèmes d'Information de Paris.</p>
+    </div>
+    <div class="smart-criteria">
+      <div class="criterion"><span class="criterion-letter">S</span><span class="criterion-text">Outil par CASPE, critères d'équité intégrés</span></div>
+      <div class="criterion"><span class="criterion-letter">M</span><span class="criterion-text">-30 % d'écart inter-arrondissements sur taux effectifs</span></div>
+      <div class="criterion"><span class="criterion-letter">A</span><span class="criterion-text">Méthodes d'optimisation disponibles en open source</span></div>
+      <div class="criterion"><span class="criterion-letter">R</span><span class="criterion-text">Répond en temps réel aux déserts d'encadrement</span></div>
+      <div class="criterion"><span class="criterion-letter">T</span><span class="criterion-text">Déployé rentrée 2027 · Rapport d'impact 2028</span></div>
+    </div>
+  </div>
+
+
+  <!-- SECTION 4 : ROADMAP -->
+  <h2 class="section-title">04 — Calendrier consolidé : plan Grégoire + 7 propositions</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Mesure</th>
+        <th>2026</th>
+        <th>2027</th>
+        <th>2028</th>
+        <th>Statut</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Plan Grégoire</strong> — signalement, École du périscolaire, formation</td>
+        <td>Cellule écoute (avr.) · École (sept.) · Formation 14 000 animateurs</td>
+        <td>Bilan mi-mandat</td>
+        <td>Évaluation</td>
+        <td><span class="pill pill-orange">En cours</span></td>
+      </tr>
+      <tr>
+        <td><strong>R1</strong> — Transparence budgétaire Open Data</td>
+        <td>Sous-fonction M57 créée, tableau de bord lancé</td>
+        <td>1re publication BP/CA complète</td>
+        <td>Enrichissement</td>
+        <td><span class="pill pill-red">Urgent</span></td>
+      </tr>
+      <tr>
+        <td><strong>R2</strong> — Déprécarisation (2 000/an)</td>
+        <td>Plan voté, 1re vague (2 000 agents)</td>
+        <td>2e vague (2 000 agents)</td>
+        <td>3e vague → objectif 8 000 vacataires</td>
+        <td><span class="pill pill-red">Urgent</span></td>
+      </tr>
+      <tr>
+        <td><strong>R3</strong> — Certification BAFA universelle</td>
+        <td>60 % vacataires certifiés</td>
+        <td>80 % certifiés</td>
+        <td>100 % permanents / 80 % vacataires</td>
+        <td><span class="pill pill-orange">Court terme</span></td>
+      </tr>
+      <tr>
+        <td><strong>R4</strong> — Taux d'encadrement réglementaire</td>
+        <td>Audit public école par école publié (déc.)</td>
+        <td>100 % des écoles conformes (rentrée)</td>
+        <td>Consolidation et maintien</td>
+        <td><span class="pill pill-red">Urgent</span></td>
+      </tr>
+      <tr>
+        <td><strong>R5</strong> — Comité de pilotage unifié</td>
+        <td>Mandat arrêté (post-conv. citoyenne 22 juin)</td>
+        <td>Opérationnel + 8 indicateurs communs</td>
+        <td>Rapport annuel au Conseil de Paris</td>
+        <td><span class="pill pill-blue">Moyen terme</span></td>
+      </tr>
+      <tr>
+        <td><strong>R6</strong> — Budget par performance (biennal)</td>
+        <td>Grille d'évaluation définie (déc.)</td>
+        <td>1re publication coût/impact par atelier</td>
+        <td>1er cycle de réallocation budgétaire</td>
+        <td><span class="pill pill-blue">Moyen terme</span></td>
+      </tr>
+      <tr>
+        <td><strong>R7</strong> — Optimisation territoriale des effectifs</td>
+        <td>Spécifications de l'outil arrêtées</td>
+        <td>Outil déployé dans les 10 CASPE</td>
+        <td>Rapport d'impact (-30 % écart inter-arrt.)</td>
+        <td><span class="pill pill-green">Structurel</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- SECTION 5 : RECHERCHE -->
+  <h2 class="section-title">05 — Fondements de la recherche internationale</h2>
+
+  <p>Ces propositions s'appuient sur 17 études publiées dans des revues à comité de lecture (base Scopus), convergentes sur quatre leviers d'amélioration systémique :</p>
+
+  <div class="research-grid">
+    <div class="research-cell">
+      <p class="rc-label">Gouvernance transparente → R1, R5</p>
+      <p>Les systèmes collaboratifs et transparents améliorent la performance administrative et la qualité des décisions d'allocation. L'e-gouvernance renforce la participation des parties prenantes et l'analyse fondée sur les données.</p>
+    </div>
+    <div class="research-cell">
+      <p class="rc-label">Budget par performance → R6</p>
+      <p>Le budget incrémental perpétue les inefficacités. Le « productivity budgeting » et le budget par cycles permettent d'ajuster les ressources selon l'impact mesuré et de détecter les dérivées précocement — y compris les dysfonctionnements de gouvernance.</p>
+    </div>
+    <div class="research-cell">
+      <p class="rc-label">Financement stable et équitable → R2, R3, R4</p>
+      <p>L'iniquité d'accès et les failles de sécurité résultent d'un sous-financement public et d'une instabilité du personnel. Des financements continus et un personnel stable sont des conditions nécessaires à la qualité et à la sécurité.</p>
+    </div>
+    <div class="research-cell">
+      <p class="rc-label">Optimisation multi-critères → R7</p>
+      <p>Des modèles d'optimisation (programmation mixte, métaheuristiques) permettent d'allouer le personnel de façon à minimiser les besoins non satisfaits tout en respectant des contraintes d'équité territoriale et de coût — particulièrement utiles en contexte de crise.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">06 — Bibliographie scientifique complète</h2>
+
+  <p style="font-size:0.88rem; color:var(--muted); margin-bottom:1.5rem;">17 études issues de la base Scopus, classées par levier thématique. Toutes vérifiables via les liens DOI/Scopus indiqués.</p>
+
+  <div style="margin-bottom:2rem;">
+    <p style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent2); margin-bottom:0.8rem; padding-bottom:0.4rem; border-bottom:1px solid var(--rule);">Gouvernance et transparence → R1, R5</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[48]</strong> Abouddaka, I. et al. — <em>The engineering of e-governance and technology in the management of secondary schools</em>. <em>Journal of Information Technology Management</em>, 2021.</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[49]</strong> Al Mawadieh, R.S.M. et al. — <em>Governance in Educational Institutions: Examining the Role of Leadership in Enhancing Academic Performance</em>. <em>Studies in Systems, Decision and Control</em>, 2026.</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[50]</strong> Eubanks, S., Goldson, M., Callahan, P. — <em>Replace or repair: Exploring possible methods for improving school governance</em>. <em>Theory into Practice</em>, 2024.</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[54]</strong> Nguyen, T.T. et al. — <em>The role of extracurricular activities in university education: Student engagement and institutional management</em>. <em>International Journal of Advanced and Applied Sciences</em>, 2025.</p>
+  </div>
+
+  <div style="margin-bottom:2rem;">
+    <p style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent2); margin-bottom:0.8rem; padding-bottom:0.4rem; border-bottom:1px solid var(--rule);">Budget stratégique et par performance → R6</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[40]</strong> Yan, B., Aberli, T. — <em>Moving beyond the 'budget dance'</em>. <em>Phi Delta Kappan</em>, 2024.</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[41]</strong> Rukajat, A., Abas, T.T., Gusniar, I.N. — <em>Extracurricular Management in Improving Student Creativity</em>. <em>Review of International Geographical Education Online</em>, 2021.</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[42]</strong> Ortynsky, S., Marshall, J., Mou, H. — <em>Budget practices in Canada's K-12 education sector: Incremental, performance, or productivity budgeting?</em> <em>Canadian Public Administration</em>, 2021.</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[47]</strong> Fadloil, Widyanto, R.A., Arumi, E.R. — <em>Budget Planning Information System Using the Rapid Application Development Method</em>. <em>E3S Web of Conferences</em>, 2024.</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[53]</strong> Marnnoi, J., Panrat, T., Jehma, H. — <em>Examining financial management in Thai public schools: sources of funding, allocation practices, and strategies for improvement</em>. <em>International Journal of Evaluation and Research in Education</em>, 2026.</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[55]</strong> Kotsyuba, I., Shikov, A., Mihailov, A. — <em>Parametric optimization of the automated plan of extracurricular activities of students by means of information technologies</em>. <em>Materials Today: Proceedings</em>, 2021.</p>
+  </div>
+
+  <div style="margin-bottom:2rem;">
+    <p style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent2); margin-bottom:0.8rem; padding-bottom:0.4rem; border-bottom:1px solid var(--rule);">Financement stable, équitable et protection de l'enfance → R2, R3, R4</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[43]</strong> Wade, A. — <em>Equity and Inclusivity in School Funding: Case study of an Australian state</em>. <em>The Routledge International Handbook of Equity and Inclusion in Education</em>, 2024.</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[51]</strong> Willse, C. — <em>Local philanthropy in public education: the rise of school support organizations</em>. <em>Advancing Research in Philanthropy and Education</em>, 2025.</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[52]</strong> Ndlovu, M., Simba, P. — <em>Quality elements of after-school programmes: A case study of two programmes in the western cape province of South Africa</em>. <em>South African Journal of Education</em>, 2021.</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[57]</strong> Ivanov, I., Zviagintsev, R. — <em>Transformation of extracurricular education in post-Soviet countries: from universal access to inequality</em>. <em>Children and Youth Services Review</em>, 2023. <em>(6 citations)</em></p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[39]</strong> Heath, R.D. et al. — <em>Extracurricular Activities and Disadvantaged Youth: A Complicated—But Promising—Story</em>. <em>Urban Education</em>, 2022. <em>(73 citations)</em></p>
+  </div>
+
+  <div style="margin-bottom:2rem;">
+    <p style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent2); margin-bottom:0.8rem; padding-bottom:0.4rem; border-bottom:1px solid var(--rule);">Optimisation multi-critères des ressources → R7</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[44]</strong> Liu, M. et al. — <em>Design and Application of Budget Resource Allocation Optimization Model Under Multi-Objective Constraints</em>. <em>ICFTIC 2024</em>, 2024.</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[45]</strong> Mateo-Doll, M., Aghezzaf, E.-H. — <em>Optimizing extracurricular activities assignment and related logistical deployment cost between collaborating schools</em>. <em>International Transactions in Operational Research</em>, 2025.</p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[46]</strong> Gutjahr, G., Menon, R., Nedungadi, P. — <em>Comparison of Metaheuristics for the Allocation of Resources for an After-School Program in Remote Areas of India</em>. <em>Communications in Computer and Information Science</em>, 2020. <em>(4 citations)</em></p>
+    <p style="font-size:0.85rem; line-height:1.7; margin-bottom:0.5rem;"><strong>[56]</strong> Wang, Z. — <em>A Hybrid MCDM–DEMATEL–Optimization Framework for Early Childhood Physical Education Resource Allocation</em>. <em>Tasmimgiri va Tahqiq dar Amaliyyat</em>, 2026.</p>
+  </div>
+
+  <div class="source-note">
+    <strong>Base documentaire complète :</strong> 17 études Scopus (réf. 39–57) · Bilan Social DASCO 2023 · Délibérations DASCO 2024–2025 · Rapport Cour des comptes IDR2025-64 · SUPAP-FSU 2024–2025 · Le Monde, CNews, Public Sénat, France 24, RTL (avril–mai 2026) · France Open Data — Données Lumières.
+  </div>
+
+
+  <!-- SECTION 7 : GUIDE CITOYEN -->
+  <h2 class="section-title">07 — Vérifier par soi-même : guide citoyen des finances de Paris</h2>
+
+  <p>Toutes les données chiffrées de ce document peuvent être vérifiées directement par chaque citoyen via les données ouvertes de la Ville :</p>
+
+  <p><strong>Le fichier clé :</strong> <code>comptes-administratifs-budgets-principaux-m57-ville.csv</code> sur opendata.paris.fr.</p>
+  <p><strong>Filtre obligatoire :</strong> ne conserver que les lignes <code>type_operation = "Réel"</code>. Sans ce filtre, le budget apparent est deux fois supérieur à la réalité (les opérations « Pour ordre » sont des écritures comptables internes, sans mouvement d'argent réel).</p>
+  <p><strong>Où chercher le périscolaire :</strong> Chapitre 012 (masse salariale — animateurs DASCO) et Chapitre 65 (subventions Caisses des écoles et associations TAP).</p>
+  <p><strong>L'argument de plaidoyer :</strong> si le Budget Primitif (BP, la promesse votée) est exécuté à 60 % dans le Compte Administratif (CA, la réalité), c'est un sous-financement effectif malgré l'engagement politique — argument fort devant le Conseil de Paris et dans les médias.</p>
+
+  <div class="source-note">
+    <strong>Outil interactif gratuit :</strong> France Open Data — Données Lumières propose un dashboard (diagramme Sankey BP/CA, carte des investissements, tendances 6 ans) sur <em>franceopendata.org/ville/paris/budget</em> — sans expertise comptable requise.
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <span>Périscolaire Paris — Note de politique publique · 17 mai 2026</span>
+    <span>Sources : DASCO · SUPAP-FSU · Cour des comptes · Bilan Social DASCO 2023 · Scopus (17 études) · Presse avril–mai 2026 · France Open Data</span>
+    <span>
+      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" style="color:var(--muted); text-decoration:none; border-bottom: 1px solid var(--rule);">
+        CC BY 4.0 — Viviana Letizia (vivlet) · Reproduction libre avec mention de la source
+      </a>
+    </span>
+  </div>
+
+</div>
+</body>
+</html>
